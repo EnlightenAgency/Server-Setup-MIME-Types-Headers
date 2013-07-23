@@ -12,7 +12,7 @@ IIS (Web.Config)
     <remove fileExtension=".woff" />
     <mimeMap fileExtension=".woff" mimeType="application/font-woff" />
     <remove fileExtension=".svg" />
-    <mimeMap fileExtension=".woff" mimeType="image/svg+xml" />
+    <mimeMap fileExtension=".svg" mimeType="image/svg+xml" />
     <mimeMap fileExtension=".otf" mimeType="application/x-font-opentype" />
 
 Apache (.htaccess)
