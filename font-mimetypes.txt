@@ -7,18 +7,20 @@
 IIS (Web.Config)
     <remove fileExtension=".eot" />
     <mimeMap fileExtension=".eot" mimeType="application/vnd.ms-fontobject" />
-    <remove fileExtension=".ttf" />
-    <mimeMap fileExtension=".ttf" mimeType="application/x-font-truetype" />
     <remove fileExtension=".woff" />
     <mimeMap fileExtension=".woff" mimeType="application/font-woff" />
+    <remove fileExtension=".ttf" />
+    <mimeMap fileExtension=".ttf" mimeType="application/x-font-truetype" />
     <remove fileExtension=".svg" />
     <mimeMap fileExtension=".svg" mimeType="image/svg+xml" />
+    <remove fileExtension=".otf" />
     <mimeMap fileExtension=".otf" mimeType="application/x-font-opentype" />
 
 Apache (.htaccess)
     AddType application/vnd.ms-fontobject .eot
-    AddType application/x-font-truetype .ttf
     AddType application/font-woff .woff
+    AddType application/x-font-truetype .ttf
+    AddType image/svg+xml .svg
     AddType application/x-font-opentype .otf
     
     # could use application/octet-stream for default binary file transfer
