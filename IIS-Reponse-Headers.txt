@@ -1,0 +1,30 @@
+Removing unneeded response headers from IIS (limits attack vectors for hackers)
+
+"Server" - in Global.asax
+  protected void Application_PreSendRequestHeaders(object sender, EventArgs e)
+	{
+		// Remove the "Server" HTTP Header from response
+		if (HttpContext.Current != null && HttpContext.Current.Response != null && HttpContext.Current.Response.Headers != null)
+		{
+			HttpContext.Current.Response.Headers.Remove("Server");
+		}
+	}
+
+"X-AspNetMvc-Version" - in Global.asax
+  protected void Application_Start()
+  {
+      MvcHandler.DisableMvcResponseHeader = true;
+  }
+
+"X-AspNet-Version" - in Web.config
+  <system.web>
+    <httpRuntime enableVersionHeader="false" />
+
+"X-Powered-By" - in Web.config
+  <system.webServer>
+    <httpProtocol>
+      <customHeaders>
+        <remove name="X-Powered-By" />
+      </customHeaders>
+    </httpProtocol>
+
