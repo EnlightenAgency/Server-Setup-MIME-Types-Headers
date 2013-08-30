@@ -1,4 +1,5 @@
 Removing unneeded response headers from IIS (limits attack vectors for hackers)
+Reference: http://stackoverflow.com/a/12803974/228429
 
 "Server" - in Global.asax
   protected void Application_PreSendRequestHeaders(object sender, EventArgs e)
