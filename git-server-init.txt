@@ -1,0 +1,23 @@
+Documenting setting up a "git server repo" from the cmd line:
+
+1) Navigate to the directory where the repo will live.  Create a directory with the name of the repo and ".git" at the end.  (This is convention only, to let a person looking at the directory name know it is a git repo.)
+
+2) Navigate (cd) into the new directory
+
+3) Type "git init --bare" 
+
+4) Navigate to your project directory (this will assume you have already initialized your git repo locally and have made previous commits).
+
+5) Type "git remote add [REMOTE NAME] [PATH TO REMOTE SERVER DIRECTORY]".  
+-Remote Name is often "origin" or "central" in this case, but can be anything
+-Path to the remote server is the path to the directory you executed the "git inti --bare"
+
+6) Type "git push --all [REMOTE NAME] -u"
+-this will push all local branches and setup tracking by default
+-to only push a single brach, use "git push --set-upstream [REMOTE NAME] [BRANCH NAME]" (use 'master' for the branch name if you only have the one branch)
+
+7) All done!
+
+More info:
+-http://stackoverflow.com/questions/7632454/how-to-use-git-bare-init-repository
+-http://stackoverflow.com/questions/1914579/set-up-git-to-pull-and-push-all-branches

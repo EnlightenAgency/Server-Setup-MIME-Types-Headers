@@ -16,6 +16,16 @@ Removing unneeded response headers from IIS (limits attack vectors for hackers)
       MvcHandler.DisableMvcResponseHeader = true;
   }
 
+"Server" - in Web.config
+NOTE: Requires rewrite modole be installed
+  <rewrite>
+      <outboundRules>
+    <rule name="Remove RESPONSE_Server" >
+      <match serverVariable="RESPONSE_Server" pattern=".+" />
+      <action type="Rewrite" value="BLANK or CUSTOM value" />
+    </rule>
+  </outboundRules>
+
 "X-AspNet-Version" - in Web.config
   <system.web>
     <httpRuntime enableVersionHeader="false" />
