@@ -5,6 +5,10 @@
 .otf - application/x-font-opentype
 
 IIS (Web.Config)
+<system.webServer>
+  ...
+  <staticContent>
+  ...
     <remove fileExtension=".eot" />
     <mimeMap fileExtension=".eot" mimeType="application/vnd.ms-fontobject" />
     <remove fileExtension=".woff" />
@@ -15,6 +19,11 @@ IIS (Web.Config)
     <mimeMap fileExtension=".svg" mimeType="image/svg+xml" />
     <remove fileExtension=".otf" />
     <mimeMap fileExtension=".otf" mimeType="application/x-font-opentype" />
+  ...
+  </staticContent>
+  ...
+</system.webServer>
+
 
 Apache (.htaccess)
     AddType application/vnd.ms-fontobject .eot
